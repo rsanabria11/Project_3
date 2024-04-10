@@ -9,20 +9,32 @@
 		<script async type="javascript" src></script>..
 </head>
 <body class="map-body">
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Birthdays</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="cat.html">My Cat</a></li>
-        <li><a href="map.html">Map</a></li>
-      </ul>
-    </nav>
-  </header>
-
+	<header>
+  	<h1>Map</h1>
+	</header>
+  	<nav>
+    	<ul>
+      	<li><a href="index.html">Birthdays</a></li>
+      	<li><a href="resume.html">Resume</a></li>
+      	<li><a href="cat.html">My Cat</a></li>
+      <li><a href="map.html">Map</a></li>
+    </ul>
+  </nav>
   <div id="wrapper">
   	<div id="canvas"></div>
   </div>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    }
+  </script>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcC_bfL9lWJYJ_fhTHmippCFWsSbN-iF4&loading=async&callback=initMap"></script>
+
 </body>
 </html>
 
