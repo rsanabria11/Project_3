@@ -1,0 +1,148 @@
+
+
+h1, h2, h3 {
+	font-family:  Lato, Arvo, sans-serif;
+  margin-bottom: 1em;
+  padding: 0.1em;
+  color: rgba(203, 1, 106, 0.92);
+}
+p {
+	font-family:  Lato, Arvo, sans-serif;
+  margin-bottom: 1em;
+  padding: 0.1em;
+  color: black;
+}
+li {
+	font-family:  Lato, Arvo, sans-serif;
+  margin-bottom: 1em;
+  padding: 0.1em;
+  color: black;
+}
+.birthday-body h1 {
+	font-size: 2.5em;
+	color: rgba(255, 4, 134, 0.92);
+}
+.resume-body h1 {
+	font-size: 2.5em;
+ 	color: black;
+ }
+.cat-body h2 {
+  font-size: 2em;
+  color: rgba(211, 8, 113, 1) ;
+}
+.map-body {
+
+  font-size: 2.5em;
+  color: black;
+
+  width: 850px;
+  height: 600px;
+  background-color: hotpink;
+  margin:0 auto;
+  overflow: hidden;
+}
+  #wrapper {
+  width: 850px;
+  height: 600px;
+  background-color: hotpink;
+  margin:0 auto;
+  overflow: hidden;
+  }
+  #canvas {
+
+  width: 700px;
+  height: 500px;
+  background-color: lightblue;
+  margin:30 auto;
+}
+
+ {
+
+   
+}
+h3 {
+  font-size: 3em;
+}
+li {
+		color: black;
+    text-align: left;
+}
+.header-resume {
+	padding: 1em;
+  background-color: rgba(249, 172, 212, 0.8);
+  border-radius: 1em;
+  font-size: 2em;
+}
+.h2-resume {
+	color: black;
+	font-size: 1.7em;
+}
+/* NAV css*/
+nav {
+	text-align: center;
+}
+nav{
+	background-color: hotpink;
+	margin-bottom: 2em;
+}
+nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav ul li {
+  display: inline;
+}
+  
+nav ul li a {
+  display: inline-block;
+  color: white; 
+  text-decoration: none;
+  padding: 1em 2em;
+}
+nav ul li a:hover {
+  background-color: pink;
+}
+/* Body CSSS */
+body {
+text-align: center;
+}
+.resume-body {
+  background-color: rgba(249, 172, 212, 0.35);
+	background-size: contain;
+  background-position: center;
+}
+.cat-body {
+	background-color: rgba(249, 172, 212, 0.35);
+	background-size: contain;
+  background-position: center;
+}
+.birthday-body {
+	background-color: rgba(249, 172, 212, 0.35);
+	background-size: contain;
+  background-position: center;
+}
+section {
+  background-color: rgba(249, 172, 212, 0.8);
+  padding: 1.5em;
+  border-radius: 1em;
+  box-shadow: 0.5em 0.5em 2em floralwhite;
+  margin: 3em auto;
+  max-width: 70rem;
+  color: white;
+}
+.cat-pics {
+	display: inline-block;
+  margin-right: 5em;
+  margin: 1.5em;
+  box-shadow: 0.1em 0.1em 1em floralwhite;
+  vertical-align: text-top;
+  display: block;
+}
+.cat-pics img {
+  max-width: 400px;
+  max-height: 400px;
+  float: right;
+}
+
+
