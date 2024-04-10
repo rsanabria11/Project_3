@@ -35,11 +35,6 @@ li {
   font-size: 2.5em;
   color: black;
 
-  width: 850px;
-  height: 600px;
-  background-color: hotpink;
-  margin:0 auto;
-  overflow: hidden;
 }
   #wrapper {
   width: 850px;
