@@ -60,3 +60,5 @@ function init() {
         infowindow.open(myMap, marker);
     });
 }
+
+google.maps.event.addDomListener(window, 'load', init);
