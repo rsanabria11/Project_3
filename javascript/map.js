@@ -3,62 +3,35 @@ function init() {
     var myLocation = new google.maps.LatLng(34.13457688683777, -118.32114050424853);
     var mapOptions = {
         center: myLocation,
-        zoom: 18,
-        mapTypeId: google.maps.MapTypeId.SATELLITE,
-        mapTypeControlOptions: {
-            position: google.maps.ControlPosition.BOTTOM_CENTER
-        }
+        zoom: 12,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
     var myMap = new google.maps.Map(el, mapOptions);
 
-    var contentString = '<h1>Hollywood Sign</h1><p>The Hollywood sign is a symbol of the entertainment industry, dreams, and ambition. Its also a location marker and a reminder of the pursuit of glamorous lifestyles. The sign has nine white block letters that are each 45 feet tall.</p>';
+    // Array of locations with their details
+    var locations = [
+        { position: new google.maps.LatLng(34.13457688683777, -118.32114050424853), title: 'Hollywood Sign', icon: './images/mapicon.jpg', content: '<h1>Hollywood Sign</h1><p>The Hollywood sign is a symbol of the entertainment industry, dreams, and ambition. Its also a location marker and a reminder of the pursuit of glamorous lifestyles. The sign has nine white block letters that are each 45 feet tall.</p>' },
+        { position: new google.maps.LatLng(34.052235, -118.243683), title: 'Griffith Observatory', icon: './images/observatory.png', content: '<h1>Griffith Observatory</h1><p>The Griffith Observatory is a facility in Los Angeles, California, sitting on the south-facing slope of Mount Hollywood in Los Angeles\' Griffith Park. It commands a view of the Los Angeles Basin, including Downtown Los Angeles to the southeast, Hollywood to the south, and the Pacific Ocean to the southwest.</p>' }
+        // Add more locations as needed
+    ];
 
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-
-    var marker = new google.maps.Marker({
-        position: myLocation,
-        map: myMap,
-        title: 'Hollywood Sign',
-        icon: './images/mapicon.jpg'
-    });
-
-    var streetViewService = new google.maps.StreetViewService();
-    var streetViewPanorama = myMap.getStreetView();
-    streetViewPanorama.setPosition(myLocation);
-    streetViewPanorama.setPov({
-        heading: 256,
-        pitch: 0
-    });
-
-    var searchBox = new google.maps.places.SearchBox(document.getElementById('search-box'));
-    myMap.controls[google.maps.ControlPosition.TOP_LEFT].push(document.getElementById('search-box'));
-
-    google.maps.event.addListener(searchBox, 'places_changed', function () {
-        var places = searchBox.getPlaces();
-        if (places.length == 0) {
-            return;
-        }
-        var bounds = new google.maps.LatLngBounds();
-        places.forEach(function (place) {
-            if (!place.geometry) {
-                console.log("Returned place contains no geometry");
-                return;
-            }
-            if (place.geometry.viewport) {
-                bounds.union(place.geometry.viewport);
-            } else {
-                bounds.extend(place.geometry.location);
-            }
+    // Loop through each location and add markers
+    locations.forEach(function (location) {
+        var marker = new google.maps.Marker({
+            position: location.position,
+            map: myMap,
+            title: location.title,
+            icon: location.icon
         });
-        myMap.fitBounds(bounds);
-    });
 
-    google.maps.event.addListener(marker, 'mouseover', function () {
-        infowindow.open(myMap, marker);
+        var infowindow = new google.maps.InfoWindow({
+            content: location.content
+        });
+
+        // Add click event listener to each marker to open info window
+        marker.addListener('click', function () {
+            infowindow.open(myMap, marker);
+        });
     });
 }
-
-google.maps.event.addDomListener(window, 'load', init);
