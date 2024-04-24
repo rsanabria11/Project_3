@@ -22,7 +22,10 @@ function init() {
             position: location.position,
             map: myMap,
             title: location.title,
-            icon: location.icon
+            icon: {
+                url: location.icon,
+                scaledSize: new google.maps.Size(30, 30) // Adjust the size here
+            }
         });
 
         var infowindow = new google.maps.InfoWindow({
